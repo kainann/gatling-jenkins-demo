@@ -10,10 +10,11 @@ class SimpleSimulation extends Simulation {
 
   val scn = scenario("Simple")
     .exec(
-      http("Home").get("/"))
+      http("Home").get("/")
+    )
 
   setUp(
     scn.inject(
       atOnceUsers(1)))
-    .protocols(httpProtocol)
+    .protocols(httpProtocol).assertions(global.responseTime.max.lessThan(ThreadLocalRandom.current.nextInt(100))
 }
