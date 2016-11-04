@@ -17,5 +17,5 @@ class SimpleSimulation extends Simulation {
   setUp(
     scn.inject(
       atOnceUsers(1)))
-    .protocols(httpProtocol).assertions(global.responseTime.max.lessThan(ThreadLocalRandom.current.nextInt(100))
+    .protocols(httpProtocol).assertions(global.responseTime.max.lessThan(ThreadLocalRandom.current.nextInt(100)))
 }
